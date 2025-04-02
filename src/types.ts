@@ -1,19 +1,23 @@
-export interface BloodTestResult {
+export interface UploadedFile {
   id: string;
   user_id: string;
-  test_date: string;
+  date_uploaded: string;
+  filename: string;
   pdf_url: string;
-  created_at: string;
+  output_txt?: string;
 }
 
-export interface BloodComponent {
+export interface BloodTestResult {
   id: string;
-  result_id: string;
-  component_name: string;
-  measured_value: number;
-  min_range: number;
-  max_range: number;
+  file_id: string;
+  group_name: string;
+  substance: string;
+  value: number;
   unit: string;
+  min_range: number | null;
+  max_range: number | null;
+  is_within_range: boolean | null;
+  created_at: string;
 }
 
 export interface AuthUser {
